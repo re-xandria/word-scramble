@@ -1,0 +1,64 @@
+#scrambled-word {
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+#main {
+    width: 500px;
+}
+
+body {
+    background-color: #F4F3EE;
+}
+
+
+.card {
+    color: #463F3A;
+    border-color: #8A817C;
+}
+
+.card-header {
+    background-color: #E0AFA0;
+    color: #ffffff;
+}
+
+.btn-primary {
+    background-color: #8A817C;
+    border-color: #8A817C;
+    border-width: 2px;
+}
+
+.btn-primary:hover {
+    background-color: #ffffff;
+    color: #8A817C;
+    border-color: #8A817C;
+    border-width: 2px;
+}
+
+.btn-primary:active:focus  {
+    background-color: #ffffff;
+    color: #8A817C;
+    border-color: #8A817C;
+    border-width: 2px;
+}
+
+.btn-secondary {
+    background-color: #463F3A;
+    border-color: #463F3A;
+    border-width: 2px;
+}
+
+.btn-secondary:hover {
+    background-color: #ffffff;
+    color: #463F3A;
+    border-color: #463F3A;
+    border-width: 2px;
+}
+
+.btn-secondary:active:focus {
+    background-color: #ffffff; 
+    color: #463F3A;
+    border-color: #463F3A;
+    border-width: 2px;
+}

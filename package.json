@@ -1,0 +1,11 @@
+{
+  "name": "word-scramble",
+  "version": "1.0.0",
+  "description": "Creating a word scramble mini game from scratch.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
