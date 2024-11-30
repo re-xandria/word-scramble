@@ -10,10 +10,42 @@
   <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="main.js" type="module"></script>
-    <script src="words.js" type="module"></script>
+    <script src="video-games.js" type="module"></script>
 
-    <div class="d-flex align-items-center justify-content-center vh-100">
-        <button type="button" class="btn btn-secondary p-3" onclick="window.location.href='./play.html'">Start Game</button>
+    <div class="container d-flex flex-column justify-content-center min-vh-100">
+        <button type="button" class="btn btn-secondary p-3 my-2 mx-auto col-lg-3 col-6" onclick="window.location.href='./play.html'">Start Game</button>
+        <button type="button" class="btn btn-secondary p-3 my-2 mx-auto col-lg-3 col-6" data-bs-toggle="modal" data-bs-target="#wordPackModal" onclick="">Change Word Pack</button>
+        
+        <div class="modal modal-lg fade" id="wordPackModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-body row my-2 mx-1">
+                    <div class="category" id="video-games">
+                      <h1 class="modal-title fs-5">Video Games</h1>
+                      <div class="d-flex flex-column flex-sm-row justify-content-sm-start justify-content-center gap-2 my-2">
+                          <button type="button" class="btn pack-select active" onclick="changeWordPack(this.id)" id="minecraft" data-bs-toggle="button">Minecraft</button>
+                          <button type="button" class="btn pack-select" onclick="changeWordPack(this.id)" id="sf6" data-bs-toggle="button">Street Fighter 6</button>
+                          <button type="button" class="btn pack-select" onclick="changeWordPack(this.id)" id="tekken8" data-bs-toggle="button">Tekken 8</button>
+                      </div>
+                    </div>
+                    <div class="category my-4" id="movies">
+                      <h1 class="modal-title fs-5">Movies</h1>
+                      <div class="d-flex flex-column flex-sm-row justify-content-sm-start justify-content-center gap-2 my-2">
+                          <button type="button" class="btn pack-select" onclick="changeWordPack(this.id)" id="princessAndFrog" data-bs-toggle="button">The Princess and The Frog</button>
+                          <button type="button" class="btn pack-select" onclick="changeWordPack(this.id)" id="lionKing" data-bs-toggle="button">The Lion King</button>
+                          <button type="button" class="btn pack-select" onclick="changeWordPack(this.id)" id="spiderman" data-bs-toggle="button">Spider-Man</button>
+                      </div>
+                    </div>
+                </div>                  
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <!-- <button type="button" class="btn btn-secondary p-3" onclick="">Instructions</button>
+        <button type="button" class="btn btn-secondary p-3" onclick="">Options</button> -->
     </div>
     
   </body>

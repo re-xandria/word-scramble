@@ -1,4 +1,5 @@
-import { words } from "./words.js"
+import { videoGames } from "./video-games.js"
+import { movies } from "./movies.js"
 
 let currWord = ""
 let score = 0
@@ -6,7 +7,9 @@ let streak = 0
 let maxStreak = 0
 
 window.getWord = () => {
-    const pairs = Object.entries(words)
+    resetInput()
+    const pairs = getCategoryFile()
+    console.log(pairs)
     const randomIndex = Math.floor(Math.random() * pairs.length)
     const randomPair = pairs[randomIndex]
     const key = randomPair[0]
@@ -15,6 +18,39 @@ window.getWord = () => {
     document.getElementById("scrambled-word").innerText = scrambleWord(key)
     document.getElementById("hint").innerText = value
 }
+
+function getCategoryFile() {
+    const cat = localStorage.getItem("category")
+    const currPack = localStorage.getItem("currWordPack")
+    console.log("getFile:" + cat)
+    switch (cat) {
+        case "video-games":
+            console.log(1)
+            return Object.entries(videoGames[currPack])
+        case "movies":
+            console.log(2)
+            return Object.entries(movies[currPack])
+        default:
+            console.log(3)
+            return Object.entries("minecraft")
+    }
+}
+
+window.changeWordPack = (buttonTitle) => {
+    const newWordPack = document.getElementById(buttonTitle)
+    const wordPackCat = newWordPack.closest(".category").id
+    document.querySelectorAll(".pack-select").forEach((pack) => { pack.classList.remove("active")})
+    newWordPack.classList.add("active")
+    localStorage.setItem("currWordPack", newWordPack.id)
+    localStorage.setItem("category", wordPackCat)
+}
+
+function selectedWordPack() {
+    const title = localStorage.getItem("currWordPack")
+    title ? changeWordPack(title) : localStorage.setItem("currWordPack", "minecraft")
+}
+
+window.onload = selectedWordPack 
 
 const scrambleWord = (str) => {
     const len = str.length
@@ -109,7 +145,6 @@ window.checkAnswer = () => {
 }
 
 window.startGame = (time) => {
-    // add parameter for different word categories
     getWord()
     startTimer(time)
 }

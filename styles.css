@@ -62,3 +62,26 @@ body {
     border-color: #463F3A;
     border-width: 2px;
 }
+
+.pack-select {
+    background-color: #E0AFA0;
+    color: #ffffff;
+    font-weight: 500;
+    border-width: 2px;
+}
+
+.pack-select:hover {
+    border-width: 2px;
+    border-color: #8A817C;
+    color: #8A817C;
+}
+
+.pack-select.active {
+    border-width: 2px;
+    color: #463F3A;
+}
+
+.pack-select.active:hover {
+    border: solid 2px #463F3A;
+    color: #463F3A;
+}
